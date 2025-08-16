@@ -1,19 +1,19 @@
-"use client";
-import Navbar from "@/components/Navbar";
-import branches from "@/data/branches";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React from "react";
+'use client';
+import Navbar from '@/components/Navbar';
+import branches from '@/data/branches';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import React from 'react';
 
 const Page: React.FC = () => {
   const router = useRouter();
   const [selectedBranch, setSelectedBranch] = React.useState<number>(0);
   return (
-    <div className="h-screen w-full" id="content">
+    <div className="h-screen w-full scroll-smooth" id="content">
       <Navbar />
       <main className="h-full w-full max-lg:px-4">
-        <div className="pt-24  w-full max-w-4xl mx-auto">
-          <div className="w-full h-full flex flex-col gap-6">
+        <div className="mx-auto w-full max-w-4xl pt-24">
+          <div className="flex h-full w-full flex-col gap-6">
             <div className="mx-auto mb-8">
               <Image
                 src="/Tree.svg"
@@ -23,8 +23,8 @@ const Page: React.FC = () => {
                 className="sm:w-64"
               />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-[600px] max-md:gap-y-3 md:grid-cols-2 md:gap-12 mx-auto">
-              <h1 className="font-semibold text-4xl text-[var(--color-text-primary)]    ">
+            <div className="mx-auto grid grid-cols-1 max-md:gap-y-3 sm:grid-cols-[600px] md:grid-cols-2 md:gap-12">
+              <h1 className="text-text-primary text-4xl font-semibold">
                 All Your HITAM Study Resources in One Place
               </h1>
               <p className="">
@@ -36,10 +36,10 @@ const Page: React.FC = () => {
             <div className="flex flex-wrap"></div>
           </div>
         </div>
-        <div className="py-24 w-full max-w-4xl mx-auto">
-          <div className="w-full h-full flex flex-col gap-10 md:text-center">
-            <div className="mx-auto  ">
-              <h1 className="text-[var(--color-text-primary)] text-2xl font-semibold">
+        <div className="mx-auto w-full max-w-4xl py-24">
+          <div className="flex h-full w-full flex-col gap-10 md:text-center">
+            <div className="mx-auto">
+              <h1 className="text-text-primary text-2xl font-semibold">
                 Quick access to your course resources.
               </h1>
               <h2 className="text-sm">
@@ -47,8 +47,8 @@ const Page: React.FC = () => {
                 faster.
               </h2>
             </div>
-            <div className="max-w-full overflow-x-auto mx-auto">
-              <div className="flex items-center gap-4 min-w-max ">
+            <div className="mx-auto max-w-full overflow-x-auto">
+              <div className="flex flex-wrap items-center justify-center gap-4">
                 {branches.map((branch, index) => (
                   <button
                     onClick={() => {
@@ -56,10 +56,10 @@ const Page: React.FC = () => {
                       router.push(`${branch.abbreviation}`);
                     }}
                     key={index}
-                    className={`px-5 py-2 cursor-pointer rounded-full font-semibold ${
+                    className={`cursor-pointer rounded-full px-5 py-2 font-semibold ${
                       selectedBranch === branch.id
-                        ? "index-button"
-                        : "select-button"
+                        ? 'index-button'
+                        : 'select-button'
                     }`}
                   >
                     {branch.abbreviation}

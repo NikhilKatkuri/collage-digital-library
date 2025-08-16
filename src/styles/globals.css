@@ -1,9 +1,12 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* colors */
 :root {
   --header-bg: hsla(0, 0%, 4%, 0.8);
   --header-border: hsla(0, 0%, 100%, 0.08);
+}
+
+@theme inline {
   --color-bg-primary: #08090a;
   --color-bg-secondary: #1c1c1f;
   --color-bg-tertiary: #0f1011;
@@ -36,9 +39,10 @@
   --shadow-low: 0px 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-medium: 0px 4px 24px rgba(0, 0, 0, 0.2);
   --shadow-high: 0px 7px 32px rgba(0, 0, 0, 0.35);
-  --shadow-stack-low: 0px 8px 2px 0px transparent,
-    0px 5px 2px 0px rgba(0, 0, 0, 0.01), 0px 3px 2px 0px rgba(0, 0, 0, 0.04),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.07), 0px 0px 1px 0px rgba(0, 0, 0, 0.08);
+  --shadow-stack-low:
+    0px 8px 2px 0px transparent, 0px 5px 2px 0px rgba(0, 0, 0, 0.01),
+    0px 3px 2px 0px rgba(0, 0, 0, 0.04), 0px 1px 1px 0px rgba(0, 0, 0, 0.07),
+    0px 0px 1px 0px rgba(0, 0, 0, 0.08);
   --icon-grayscale-image-filter: grayscale(100%) brightness(400%);
   --color-bg-level-0: #08090a;
   --color-bg-level-1: #0f1011;
@@ -67,15 +71,16 @@
 
 /* inter-latin-wght-normal */
 @font-face {
-  font-family: "Inter Variable";
+  font-family: 'Inter Variable';
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
   src: url(@fontsource-variable/inter/files/inter-latin-wght-normal.woff2)
-    format("woff2-variations");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
-    U+2212, U+2215, U+FEFF, U+FFFD;
+    format('woff2-variations');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 
 body {
@@ -85,7 +90,7 @@ body {
 
 html,
 body {
-  font-family: "Inter Variable", sans-serif;
+  font-family: 'Inter Variable', sans-serif;
 }
 
 header {
@@ -96,8 +101,7 @@ header {
 
 @layer utilities {
   .header-links:hover {
-    color: var(--color-text-secondary);
-    background: var(--color-bg-tertiary);
+    @apply text-text-secondary bg-bg-tertiary;
   }
 }
 
@@ -105,10 +109,8 @@ header {
   display: none;
 }
 .select-button {
-  color: var(--color-text-secondary);
-  background: var(--color-bg-secondary);
+  @apply text-text-secondary bg-bg-secondary;
 }
 .index-button {
-  background: var(--color-text-primary);
-  color: var(--color-bg-secondary);
+  @apply bg-text-primary text-bg-primary;
 }

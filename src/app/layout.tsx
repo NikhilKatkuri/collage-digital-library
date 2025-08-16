@@ -1,48 +1,48 @@
-import type { Metadata } from "next";
-import "@/styles/globals.css";
+import type { Metadata } from 'next';
+import '@/styles/globals.css';
 
 // raw data taken from Chatgpt
 export const metadata: Metadata = {
-  title: "HITAM Digital Library | Syllabus, Notes & Question Papers",
+  title: 'HITAM Digital Library | Syllabus, Notes & Question Papers',
   description:
-    "HITAM Digital Library provides syllabus copies, notes, course files, and previous question papers for HITAM students. Accessible anytime, anywhere.",
+    'HITAM Digital Library provides syllabus copies, notes, course files, and previous question papers for HITAM students. Accessible anytime, anywhere.',
   keywords: [
-    "HITAM Digital Library",
-    "HITAM Notes",
-    "HITAM Question Papers",
-    "HITAM Syllabus",
-    "HITAM Engineering",
-    "Hyderabad Institute of Technology and Management",
+    'HITAM Digital Library',
+    'HITAM Notes',
+    'HITAM Question Papers',
+    'HITAM Syllabus',
+    'HITAM Engineering',
+    'Hyderabad Institute of Technology and Management',
   ],
-  authors: [{ name: "HITAM Digital Library Team" }],
-  creator: "HITAM Digital Library",
-  publisher: "HITAM Campus",
-  metadataBase: new URL("https://your-app.vercel.app"), // replace with actual vercel/custom domain
+  authors: [{ name: 'HITAM Digital Library Team' }],
+  creator: 'HITAM Digital Library',
+  publisher: 'HITAM Campus',
+  metadataBase: new URL('https://your-app.vercel.app'), // replace with actual vercel/custom domain
   openGraph: {
-    title: "HITAM Digital Library",
+    title: 'HITAM Digital Library',
     description:
-      "Access HITAM syllabus, notes, and previous question papers in one place.",
-    url: "https://your-app.vercel.app", // update after deploy
-    siteName: "HITAM Digital Library",
+      'Access HITAM syllabus, notes, and previous question papers in one place.',
+    url: 'https://your-app.vercel.app', // update after deploy
+    siteName: 'HITAM Digital Library',
     images: [
       {
-        url: "https://your-app.vercel.app/og-image.png", // add preview image in /public
+        url: 'https://your-app.vercel.app/og-image.png', // add preview image in /public
         width: 1200,
         height: 630,
-        alt: "HITAM Digital Library",
+        alt: 'HITAM Digital Library',
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
 
   twitter: {
-    card: "summary_large_image",
-    title: "HITAM Digital Library",
+    card: 'summary_large_image',
+    title: 'HITAM Digital Library',
     description:
-      "A one-stop portal for HITAM students with syllabus, notes, and question papers.",
-    images: ["https://your-app.vercel.app/og-image.png"],
-    creator: "@your_twitter_handle", // optional
+      'A one-stop portal for HITAM students with syllabus, notes, and question papers.',
+    images: ['https://your-app.vercel.app/og-image.png'],
+    creator: '@your_twitter_handle', // optional
   },
 
   robots: {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://your-app.vercel.app",
+    canonical: 'https://your-app.vercel.app',
   },
 };
 
