@@ -23,6 +23,7 @@ type Data = {
 };
 
 export default function BranchPage() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [data, setData] = useState<Data | null>(null);
   const [driveUrl, setDriveUrl] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
