@@ -1,13 +1,17 @@
 'use client';
 import Navbar from '@/components/Navbar';
-import branches from '@/data/branches';
+import { branches, BranchType } from '@/data/brunch';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const Page: React.FC = () => {
+ 
   const router = useRouter();
-  const [selectedBranch, setSelectedBranch] = React.useState<number>(0);
+  const [selectedBranch, setSelectedBranch] = React.useState<BranchType>(
+    branches[0]
+  );
+
   return (
     <div className="h-screen w-full scroll-smooth" id="content">
       <Navbar />
@@ -52,17 +56,17 @@ const Page: React.FC = () => {
                 {branches.map((branch, index) => (
                   <button
                     onClick={() => {
-                      setSelectedBranch(branch.id);
-                      router.push(`${branch.abbreviation}`);
+                      setSelectedBranch(branch);
+                      router.push(`${branch}`);
                     }}
                     key={index}
                     className={`cursor-pointer rounded-full px-5 py-2 font-semibold ${
-                      selectedBranch === branch.id
+                      selectedBranch === branch
                         ? 'index-button'
                         : 'select-button'
                     }`}
                   >
-                    {branch.abbreviation}
+                    {branch}
                   </button>
                 ))}
               </div>

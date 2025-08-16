@@ -1,121 +1,42 @@
 'use client';
-import branches from '@/data/branches';
-import brunch, {
-  branchType,
+
+import {
+  branches,
+  regulations,
   RegulationType,
-  ResourceType,
-  SubjectName,
+  resources,
+  years,
   YearType,
 } from '@/data/brunch';
-import { useParams, notFound, useRouter } from 'next/navigation';
-import { useEffect, useState, useMemo } from 'react';
+import { notFound, useParams, useRouter } from 'next/navigation';
+import React from 'react';
 
-type Regulation = { selectedIndex: number; regulation: RegulationType };
-type Year = { selectedIndex: number; year: YearType };
-type Subject = { selectedIndex: number; subject: SubjectName };
-type Resource = { selectedIndex: number; resource: ResourceType };
-type Data = {
-  regulation: RegulationType;
-  branch: branchType;
-  year: YearType;
-  subject: SubjectName;
-  resource: ResourceType;
-};
-
-export default function BranchPage() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [data, setData] = useState<Data | null>(null);
-  const [driveUrl, setDriveUrl] = useState<string | null>(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const params = useParams();
+const BranchPage: React.FC = () => {
+  // router
   const router = useRouter();
-  const branchParam = params.branch?.toString().toUpperCase();
+  // control bar
+  const [isOpen, setIsOpen] = React.useState(false);
+  // params
+  const params = useParams();
+  const branchParam = params.branch?.toString().toLowerCase();
+  const isBranch = branches.find(a => a.toLowerCase() === branchParam);
 
-  const branch = useMemo(
-    () => branches.find(b => b.abbreviation.toUpperCase() === branchParam),
-    [branchParam]
+  // controls
+  const subjects = [
+    'SUBJECT-1',
+    'SUBJECT-2',
+    'SUBJECT-3',
+    'SUBJECT-4',
+    'SUBJECT-5',
+    'SUBJECT-6',
+  ];
+  const [regulation, setRegulation] = React.useState<RegulationType>(
+    regulations[0]
   );
-
-  const [regulation, setRegulation] = useState<Regulation>(() => ({
-    selectedIndex: 0,
-    regulation: 'hr-22',
-  }));
-  const [year, setYear] = useState<Year>(() => ({
-    selectedIndex: 0,
-    year: 'YEAR-1',
-  }));
-  const [subject, setSubject] = useState<Subject>(() => ({
-    selectedIndex: 0,
-    subject: 'Subject-1',
-  }));
-  const [resource, setResource] = useState<Resource>(() => ({
-    selectedIndex: 0,
-    resource: 'syllabus',
-  }));
-
-  const regulations: RegulationType[] = ['hr-22', 'hr-24'];
-  const years: YearType[] = ['YEAR-1', 'YEAR-2', 'YEAR-3', 'YEAR-4'];
-  const resources: ResourceType[] = [
-    'syllabus',
-    'mid',
-    'notes',
-    'semester',
-    'assignments',
-  ];
-  const subjects: SubjectName[] = [
-    'Subject-1',
-    'Subject-2',
-    'Subject-3',
-    'Subject-4',
-    'Subject-5',
-    'Subject-6',
-  ];
-
-  useEffect(() => {
-    if (!branch) return;
-
-    const updateData = () => {
-      const reg = brunch.find(a => a.regulationType === regulation.regulation);
-      if (!reg) return;
-
-      const branchData = reg.regulation.find(
-        a => a.branch === branch.abbreviation
-      );
-      if (!branchData) return;
-
-      const yearData = branchData.block.find(a => a.year === year.year);
-      if (!yearData) return;
-
-      const subjectData = yearData.subjects.find(
-        a => a.name.toLowerCase() === subject.subject.toLowerCase()
-      );
-      if (!subjectData) return;
-
-      const resourceData = subjectData.resource.find(
-        a => a.type.toLowerCase() === resource.resource.toLowerCase()
-      );
-
-      setData({
-        branch: branch.abbreviation,
-        regulation: regulation.regulation,
-        year: year.year,
-        subject: subject.subject,
-        resource: resource.resource,
-      });
-
-      setDriveUrl(resourceData?.url || null);
-    };
-
-    updateData();
-  }, [
-    branch,
-    regulation.regulation,
-    year.year,
-    subject.subject,
-    resource.resource,
-  ]);
-
-  if (!branch) return notFound();
+  const [year, setYear] = React.useState<YearType>(years[0]);
+  const [subject, setSubject] = React.useState<string>(subjects[0]);
+  const [resource, setResource] = React.useState<string>(resources[0]);
+  if (!isBranch) return notFound();
 
   return (
     <div className="relative h-screen w-screen">
@@ -178,19 +99,17 @@ export default function BranchPage() {
       </header>
       <div className={`flex h-[calc(100%-4rem)] w-screen items-center gap-2`}>
         <div
-          className={`${isOpen ? 'max-md:left-0' : 'max-md:left-[-500px] md:hidden'} bg-bg-primary border-text-tertiary h-full w-full max-w-96 overflow-hidden border-r-2 border-dashed p-3 transition-all duration-300 ease-in-out max-md:fixed max-md:top-16 max-md:w-screen max-md:max-w-96`}
+          className={`${isOpen ? 'max-md:left-0' : 'max-md:left-[-500px] md:hidden'} bg-bg-primary border-text-tertiary h-full w-full max-w-96 overflow-hidden border-r-2 border-dashed p-3 transition-all duration-300 ease-in-out *:text-sm *:font-medium max-md:fixed max-md:top-16 max-md:w-screen max-md:max-w-96`}
         >
           <div className="h-full overflow-y-scroll">
             <div className="my-5">
               <div className="grid grid-cols-2 gap-4">
-                {regulations.map((item, index) => (
+                {regulations.map(item => (
                   <button
                     key={item}
-                    onClick={() =>
-                      setRegulation({ selectedIndex: index, regulation: item })
-                    }
+                    onClick={() => setRegulation(item)}
                     className={`w-full px-4 py-3 ${
-                      regulation.selectedIndex === index
+                      regulation === item
                         ? 'index-button-level-2'
                         : 'select-button'
                     } rounded-md text-left shadow transition`}
@@ -204,16 +123,12 @@ export default function BranchPage() {
             <div className="border-text-tertiary border-1 border-dashed"></div>
             <div className="my-5">
               <div className="grid grid-cols-2 gap-4">
-                {years.map((item, index) => (
+                {years.map(item => (
                   <button
                     key={item}
-                    onClick={() =>
-                      setYear({ selectedIndex: index, year: item })
-                    }
+                    onClick={() => setYear(item)}
                     className={`w-full px-4 py-3 ${
-                      year.selectedIndex === index
-                        ? 'index-button-level-2'
-                        : 'select-button'
+                      year === item ? 'index-button-level-2' : 'select-button'
                     } rounded-md text-left shadow transition`}
                   >
                     <span>
@@ -227,14 +142,12 @@ export default function BranchPage() {
             <div className="border-text-tertiary border-1 border-dashed"></div>
             <div className="my-5">
               <div className="grid grid-cols-2 gap-4">
-                {subjects.map((item, index) => (
+                {subjects.map(item => (
                   <button
                     key={item}
-                    onClick={() =>
-                      setSubject({ selectedIndex: index, subject: item })
-                    }
+                    onClick={() => setSubject(item)}
                     className={`w-full px-4 py-3 ${
-                      subject.selectedIndex === index
+                      subject === item
                         ? 'index-button-level-2'
                         : 'select-button'
                     } rounded-md text-left shadow transition`}
@@ -248,14 +161,12 @@ export default function BranchPage() {
             <div className="border-text-tertiary border-1 border-dashed"></div>
             <div className="my-5">
               <div className="grid grid-cols-2 gap-4">
-                {resources.map((item, index) => (
+                {resources.map(item => (
                   <button
                     key={item}
-                    onClick={() =>
-                      setResource({ selectedIndex: index, resource: item })
-                    }
+                    onClick={() => setResource(item)}
                     className={`w-full px-4 py-3 ${
-                      resource.selectedIndex === index
+                      resource === item
                         ? 'index-button-level-2'
                         : 'select-button'
                     } rounded-md text-left shadow transition`}
@@ -272,7 +183,7 @@ export default function BranchPage() {
         >
           <iframe
             src={`https://drive.google.com/file/d/${
-              !driveUrl ? '1AO2pJy2qXdQfl4WmGl9yERJ0tC-qdGH1' : driveUrl
+              !0 ? '1AO2pJy2qXdQfl4WmGl9yERJ0tC-qdGH1' : 0
             }/preview`}
             width="100%"
             height="100%"
@@ -283,4 +194,6 @@ export default function BranchPage() {
       </div>
     </div>
   );
-}
+};
+
+export default BranchPage;

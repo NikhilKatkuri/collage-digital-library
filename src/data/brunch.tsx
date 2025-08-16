@@ -1,301 +1,3389 @@
+// Resource Types
 export type ResourceType =
   | 'syllabus'
   | 'notes'
-  | 'semester'
-  | 'mid'
+  | 'semester regular'
+  | 'semester supply'
+  | 'mid 1'
+  | 'mid 2'
   | 'assignments';
 
-type resource = {
+export type Resource = {
   type: ResourceType;
   url: string;
 };
+
+// Subject Types
 export type SubjectName = string;
-type subjectType = {
+
+export type Subject = {
   name: SubjectName;
-  resource: resource[];
+  resource: Resource[];
+};
+
+// Semester Types
+export type SemesterType =
+  | 'SEMESTER-1'
+  | 'SEMESTER-2'
+  | 'SEMESTER-3'
+  | 'SEMESTER-4'
+  | 'SEMESTER-5'
+  | 'SEMESTER-6'
+  | 'SEMESTER-7'
+  | 'SEMESTER-8';
+
+export type Semester = {
+  semester: SemesterType;
+  subjects: Subject[];
 };
 
 export type YearType = 'YEAR-1' | 'YEAR-2' | 'YEAR-3' | 'YEAR-4';
-type BlockType = {
+
+export type Block = {
   year: YearType;
-  subjects: subjectType[];
+  semesterBlock: Semester[];
 };
 
-export type branchType = 'CSE' | 'DS' | 'ME' | 'EEE' | 'ECE' | 'AI-ML';
-type regulation = {
-  branch: branchType;
-  block: BlockType[];
+export type BranchType = 'CSE' | 'DS' | 'ME' | 'EEE' | 'ECE' | 'AI-ML';
+
+export type Regulation = {
+  branch: BranchType;
+  block: Block[];
 };
 
+// Regulation Data Type
 export type RegulationType = 'hr-22' | 'hr-24';
-type brunchType = {
-  regulationType: RegulationType;
-  regulation: regulation[];
-};
 
-const brunch: brunchType[] = [
+export type RegulationData = {
+  regulationType: RegulationType;
+  regulation: Regulation[];
+};
+export const branches: BranchType[] = [
+  'CSE',
+  'DS',
+  'ME',
+  'EEE',
+  'ECE',
+  'AI-ML',
+];
+export const regulations: RegulationType[] = ['hr-22', 'hr-24'];
+export const years: YearType[] = ['YEAR-1', 'YEAR-2', 'YEAR-3', 'YEAR-4'];
+export const semesters: SemesterType[] = [
+  'SEMESTER-1',
+  'SEMESTER-2',
+  'SEMESTER-3',
+  'SEMESTER-4',
+  'SEMESTER-5',
+  'SEMESTER-6',
+  'SEMESTER-7',
+  'SEMESTER-8',
+];
+export const resources: ResourceType[] = [
+  'syllabus',
+  'notes',
+  'semester regular',
+  'semester supply',
+  'mid 1',
+  'mid 2',
+  'assignments',
+];
+
+const brunch: RegulationData[] = [
   {
-    regulationType: 'hr-22',
+    regulationType: 'hr-24',
     regulation: [
       {
-        branch: 'CSE',
+        branch: 'AI-ML',
         block: [
           {
             year: 'YEAR-1',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-2',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-3',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-4',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        branch: 'CSE',
+        block: [
+          {
+            year: 'YEAR-1',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-2',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-3',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-4',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
@@ -307,791 +3395,1644 @@ const brunch: brunchType[] = [
         block: [
           {
             year: 'YEAR-1',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-2',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-3',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-4',
-            subjects: [
-              {
-                name: '',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: '',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: '',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: '',
-
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: '',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: '',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        branch: 'ME',
-        block: [
-          {
-            year: 'YEAR-1',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-2',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-3',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-4',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        branch: 'EEE',
-        block: [
-          {
-            year: 'YEAR-1',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-2',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-3',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-4',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
@@ -1103,260 +5044,1644 @@ const brunch: brunchType[] = [
         block: [
           {
             year: 'YEAR-1',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-2',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-3',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-4',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
@@ -1364,264 +6689,3297 @@ const brunch: brunchType[] = [
         ],
       },
       {
-        branch: 'AI-ML',
+        branch: 'EEE',
         block: [
           {
             year: 'YEAR-1',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-2',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-3',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-4',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        branch: 'ME',
+        block: [
+          {
+            year: 'YEAR-1',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-2',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-3',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-4',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
@@ -1631,267 +9989,3300 @@ const brunch: brunchType[] = [
     ],
   },
   {
-    regulationType: 'hr-24',
+    regulationType: 'hr-22',
     regulation: [
       {
-        branch: 'CSE',
+        branch: 'AI-ML',
         block: [
           {
             year: 'YEAR-1',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-2',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-3',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-4',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        branch: 'CSE',
+        block: [
+          {
+            year: 'YEAR-1',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-2',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-3',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-4',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
@@ -1903,790 +13294,1644 @@ const brunch: brunchType[] = [
         block: [
           {
             year: 'YEAR-1',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-2',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-3',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-4',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        branch: 'ME',
-        block: [
-          {
-            year: 'YEAR-1',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-2',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-3',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-          {
-            year: 'YEAR-4',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        branch: 'EEE',
-        block: [
-          {
-            year: 'YEAR-1',
-            subjects: [
-              {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-2',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-3',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-4',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
@@ -2698,260 +14943,1644 @@ const brunch: brunchType[] = [
         block: [
           {
             year: 'YEAR-1',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-2',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-3',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-4',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
@@ -2959,264 +16588,3297 @@ const brunch: brunchType[] = [
         ],
       },
       {
-        branch: 'AI-ML',
+        branch: 'EEE',
         block: [
           {
             year: 'YEAR-1',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-2',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-3',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
-                ],
-              },
-              {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],
           },
           {
             year: 'YEAR-4',
-            subjects: [
+            semesterBlock: [
               {
-                name: 'Subject-1',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-2',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        branch: 'ME',
+        block: [
+          {
+            year: 'YEAR-1',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-1',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-3',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-2',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-2',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-3',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-4',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-4',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-3',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-5',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-5',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-6',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            year: 'YEAR-4',
+            semesterBlock: [
+              {
+                semester: 'SEMESTER-7',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
               {
-                name: 'Subject-6',
-                resource: [
-                  { type: 'assignments', url: '' },
-                  { type: 'mid', url: '' },
-                  { type: 'notes', url: '' },
-                  { type: 'semester', url: '' },
-                  { type: 'syllabus', url: '' },
+                semester: 'SEMESTER-8',
+                subjects: [
+                  {
+                    name: 'SUBJECT-1',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-2',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-3',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-4',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-5',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'SUBJECT-6',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
                 ],
               },
             ],

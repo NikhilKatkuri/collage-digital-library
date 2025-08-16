@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   const NavLinks: NavLinkaTypes[] = [
     {
       name: 'home',
-      path: '/home',
+      path: '/',
     },
     {
       name: 'syllabus',
