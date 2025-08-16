@@ -114,3 +114,6 @@ header {
 .index-button {
   @apply bg-text-primary text-bg-primary;
 }
+.index-button-level-2 {
+  @apply bg-text-secondary text-bg-primary;
+}

@@ -1,7 +1,9 @@
+import { branchType } from "./brunch";
+
 export type Branch = {
   id: number;
   name: string;
-  abbreviation: string;
+  abbreviation: branchType;
 };
 
 const branches: Branch[] = [
@@ -17,7 +19,7 @@ const branches: Branch[] = [
     abbreviation: 'AI-ML',
   },
   { id: 4, name: 'Mechanical Engineering', abbreviation: 'ME' },
-  { id: 5, name: 'Electrical Engineering', abbreviation: 'EE' },
+  { id: 5, name: 'Electrical Engineering', abbreviation: 'EEE' },
   {
     id: 6,
     name: 'Electronics & Communication Engineering',

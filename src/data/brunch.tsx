@@ -44,7 +44,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -54,7 +54,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -64,7 +64,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -74,7 +74,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -84,7 +84,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -94,7 +94,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -109,7 +109,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -119,7 +119,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -129,7 +129,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -139,7 +139,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -149,7 +149,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -159,7 +159,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -174,7 +174,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -184,7 +184,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -194,7 +194,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -204,7 +204,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -214,7 +214,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -224,7 +224,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -239,7 +239,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-4',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -249,7 +249,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -259,7 +259,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -269,7 +269,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -279,7 +279,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -289,7 +289,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -309,7 +309,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -319,7 +319,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -329,7 +329,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -339,7 +339,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -349,7 +349,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -359,7 +359,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -374,7 +374,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -384,7 +384,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -394,7 +394,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -404,7 +404,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -414,7 +414,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -424,7 +424,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -439,7 +439,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -449,7 +449,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -459,7 +459,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -469,7 +469,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -479,7 +479,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -489,7 +489,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -575,7 +575,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -585,7 +585,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -595,7 +595,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -605,7 +605,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -615,7 +615,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -625,7 +625,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -640,7 +640,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -650,7 +650,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -660,7 +660,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -670,7 +670,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -680,7 +680,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -690,7 +690,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -705,7 +705,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -715,7 +715,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -725,7 +725,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -735,7 +735,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -745,7 +745,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -755,7 +755,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -770,7 +770,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-4',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -780,7 +780,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -790,7 +790,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -800,7 +800,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -810,7 +810,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -820,7 +820,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -840,7 +840,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -850,7 +850,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -860,7 +860,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -870,7 +870,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -880,7 +880,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -890,7 +890,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -905,7 +905,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -915,7 +915,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -925,7 +925,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -935,7 +935,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -945,7 +945,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -955,7 +955,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -970,7 +970,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -980,7 +980,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -990,7 +990,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1000,7 +1000,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1010,7 +1010,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1020,7 +1020,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1035,7 +1035,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-4',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1045,7 +1045,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1055,7 +1055,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1065,7 +1065,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1075,7 +1075,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1085,7 +1085,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1105,7 +1105,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1115,7 +1115,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1125,7 +1125,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1135,7 +1135,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1145,7 +1145,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1155,7 +1155,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1170,7 +1170,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1180,7 +1180,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1190,7 +1190,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1200,7 +1200,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1210,7 +1210,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1220,7 +1220,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1235,7 +1235,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1245,7 +1245,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1255,7 +1255,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1265,7 +1265,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1275,7 +1275,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1285,7 +1285,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1300,7 +1300,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-4',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1310,7 +1310,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1320,7 +1320,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1330,7 +1330,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1340,7 +1340,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1350,7 +1350,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1370,7 +1370,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1380,7 +1380,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1390,7 +1390,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1400,7 +1400,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1410,7 +1410,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1420,7 +1420,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1435,7 +1435,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1445,7 +1445,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1455,7 +1455,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1465,7 +1465,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1475,7 +1475,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1485,7 +1485,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1500,7 +1500,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1510,7 +1510,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1520,7 +1520,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1530,7 +1530,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1540,7 +1540,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1550,7 +1550,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1565,7 +1565,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-4',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1575,7 +1575,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1585,7 +1585,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1595,7 +1595,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1605,7 +1605,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1615,7 +1615,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1640,7 +1640,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1650,7 +1650,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1660,7 +1660,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1670,7 +1670,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1680,7 +1680,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1690,7 +1690,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1705,7 +1705,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1715,7 +1715,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1725,7 +1725,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1735,7 +1735,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1745,7 +1745,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1755,7 +1755,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1770,7 +1770,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1780,7 +1780,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1790,7 +1790,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1800,7 +1800,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1810,7 +1810,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1820,7 +1820,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1835,7 +1835,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-4',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1845,7 +1845,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1855,7 +1855,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1865,7 +1865,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1875,7 +1875,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1885,7 +1885,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1905,7 +1905,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1915,7 +1915,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1925,7 +1925,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1935,7 +1935,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1945,7 +1945,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1955,7 +1955,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1970,7 +1970,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1980,7 +1980,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -1990,7 +1990,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2000,7 +2000,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2010,7 +2010,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2020,7 +2020,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2035,7 +2035,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2045,7 +2045,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2055,7 +2055,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2065,7 +2065,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2075,7 +2075,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2085,7 +2085,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2100,7 +2100,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-4',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2110,7 +2110,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2120,7 +2120,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2130,7 +2130,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2140,7 +2140,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2150,7 +2150,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2170,7 +2170,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2180,7 +2180,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2190,7 +2190,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2200,7 +2200,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2210,7 +2210,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2220,7 +2220,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2235,7 +2235,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2245,7 +2245,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2255,7 +2255,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2265,7 +2265,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2275,7 +2275,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2285,7 +2285,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2300,7 +2300,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2310,7 +2310,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2320,7 +2320,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2330,7 +2330,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2340,7 +2340,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2350,7 +2350,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2365,7 +2365,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-4',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2375,7 +2375,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2385,7 +2385,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2395,7 +2395,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2405,7 +2405,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2415,7 +2415,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2435,7 +2435,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2445,7 +2445,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2455,7 +2455,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2465,7 +2465,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2475,7 +2475,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2485,7 +2485,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2500,7 +2500,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2510,7 +2510,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2520,7 +2520,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2530,7 +2530,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2540,7 +2540,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2550,7 +2550,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2565,7 +2565,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2575,7 +2575,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2585,7 +2585,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2595,7 +2595,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2605,7 +2605,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2615,7 +2615,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2630,7 +2630,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-4',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2640,7 +2640,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2650,7 +2650,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2660,7 +2660,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2670,7 +2670,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2680,7 +2680,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2700,7 +2700,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2710,7 +2710,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2720,7 +2720,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2730,7 +2730,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2740,7 +2740,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2750,7 +2750,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2765,7 +2765,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2775,7 +2775,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2785,7 +2785,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2795,7 +2795,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2805,7 +2805,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2815,7 +2815,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2830,7 +2830,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2840,7 +2840,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2850,7 +2850,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2860,7 +2860,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2870,7 +2870,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2880,7 +2880,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2895,7 +2895,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-4',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2905,7 +2905,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2915,7 +2915,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2925,7 +2925,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2935,7 +2935,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2945,7 +2945,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2965,7 +2965,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-1',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2975,7 +2975,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2985,7 +2985,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -2995,7 +2995,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3005,7 +3005,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3015,7 +3015,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3030,7 +3030,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-2',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3040,7 +3040,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3050,7 +3050,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3060,7 +3060,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3070,7 +3070,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3080,7 +3080,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3095,7 +3095,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-3',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3105,7 +3105,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3115,7 +3115,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3125,7 +3125,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3135,7 +3135,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3145,7 +3145,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3160,7 +3160,7 @@ const brunch: brunchType[] = [
             year: 'YEAR-4',
             subjects: [
               {
-                name: '',
+                name: 'Subject-1',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3170,7 +3170,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-2',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3180,7 +3180,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-3',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3190,7 +3190,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-4',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3200,7 +3200,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-5',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
@@ -3210,7 +3210,7 @@ const brunch: brunchType[] = [
                 ],
               },
               {
-                name: '',
+                name: 'Subject-6',
                 resource: [
                   { type: 'assignments', url: '' },
                   { type: 'mid', url: '' },
