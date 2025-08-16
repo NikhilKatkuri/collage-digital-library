@@ -16,7 +16,7 @@ const Page: React.FC = () => {
     <div className="h-screen w-full scroll-smooth" id="content">
       <Navbar />
       <main className="h-full w-full">
-        <section className="max-lg:px-4 w-full">
+        <section className="w-full max-lg:px-4">
           <div className="mx-auto w-full max-w-4xl pt-24">
             <div className="flex h-full w-full flex-col gap-6">
               <div className="mx-auto mb-8">

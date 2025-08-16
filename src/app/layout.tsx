@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
+import { SearchProvider } from '@/context/SearchContext';
+import brunch from '@/data/brunch';
 
 // raw data taken from Chatgpt
 export const metadata: Metadata = {
@@ -65,7 +67,9 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#08090a" />
       </head>
-      <body className="">{children}</body>
+      <body className="">
+        <SearchProvider data={brunch}>{children}</SearchProvider>
+      </body>
     </html>
   );
 }

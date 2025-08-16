@@ -3400,7 +3400,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-1',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'MATHS-1',
                     resource: [
                       {
                         type: 'assignments',
@@ -3433,7 +3433,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'Chemistry',
                     resource: [
                       {
                         type: 'assignments',

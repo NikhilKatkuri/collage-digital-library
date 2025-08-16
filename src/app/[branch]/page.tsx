@@ -1,6 +1,6 @@
 'use client';
 
-import {
+import brunch, {
   branches,
   regulations,
   RegulationType,
@@ -9,7 +9,7 @@ import {
   YearType,
 } from '@/data/brunch';
 import { notFound, useParams, useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useState } from 'react';
 
 const BranchPage: React.FC = () => {
   // router
@@ -22,22 +22,59 @@ const BranchPage: React.FC = () => {
   const isBranch = branches.find(a => a.toLowerCase() === branchParam);
 
   // controls
-  const subjects = [
+  const [subjects, setsubjects] = useState<string[]>([
     'SUBJECT-1',
     'SUBJECT-2',
     'SUBJECT-3',
     'SUBJECT-4',
     'SUBJECT-5',
     'SUBJECT-6',
-  ];
+  ]);
+
   const [regulation, setRegulation] = React.useState<RegulationType>(
     regulations[0]
   );
   const [year, setYear] = React.useState<YearType>(years[0]);
   const [subject, setSubject] = React.useState<string>(subjects[0]);
+  const [semester, setSemester] = React.useState<string[]>([]);
+  const [SelectedSemester, setSelectedSemester] =
+    React.useState<string>('Semester-1');
   const [resource, setResource] = React.useState<string>(resources[0]);
-  if (!isBranch) return notFound();
 
+  const [driveID, setDriveID] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    function Update() {
+      const _regulation = brunch.find(
+        item => item.regulationType === regulation
+      );
+      if (_regulation === null || _regulation === undefined) return;
+      const _year = _regulation.regulation.find(
+        item => item.branch.toLowerCase() === branchParam
+      )?.block;
+      if (_year === null || _year === undefined) return;
+      const _block = _year.find(
+        item => item.year.toLowerCase() === year.toLowerCase()
+      );
+
+      if (_block === null || _block === undefined) return;
+      setSemester(_block.semesterBlock.map(item => item.semester));
+      const _semester = _block.semesterBlock.find(
+        item => item.semester.toLowerCase() === SelectedSemester.toLowerCase()
+      );
+      if (_semester === null || _semester === undefined) return;
+      setsubjects(_semester.subjects.map(item => item.name));
+      const _resource = _semester.subjects.find(item => item.resource);
+      if (_resource === null || _resource === undefined) return;
+      const url = _resource.resource.find(
+        item => item.type.toLowerCase() === resource.toLowerCase()
+      )?.url;
+      if (!url) return;
+      setDriveID(url);
+    }
+    Update();
+  }, [SelectedSemester, branchParam, regulation, resource, subject, year]);
+  if (!isBranch) return notFound();
   return (
     <div className="relative h-screen w-screen">
       <header className="flex h-16 w-full items-center gap-4 border-b-1 px-2 max-md:justify-between sm:px-4 md:px-3">
@@ -142,6 +179,27 @@ const BranchPage: React.FC = () => {
             <div className="border-text-tertiary border-1 border-dashed"></div>
             <div className="my-5">
               <div className="grid grid-cols-2 gap-4">
+                {semester.map(item => (
+                  <button
+                    key={item}
+                    onClick={() => setSelectedSemester(item)}
+                    className={`w-full px-4 py-3 ${
+                      SelectedSemester === item
+                        ? 'index-button-level-2'
+                        : 'select-button'
+                    } rounded-md text-left shadow transition`}
+                  >
+                    <span>
+                      {item.charAt(0) + item.slice(1).toLocaleLowerCase()}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="border-text-tertiary border-1 border-dashed"></div>
+            <div className="my-5">
+              <div className="grid grid-cols-2 gap-4">
                 {subjects.map(item => (
                   <button
                     key={item}
@@ -183,7 +241,9 @@ const BranchPage: React.FC = () => {
         >
           <iframe
             src={`https://drive.google.com/file/d/${
-              !0 ? '1AO2pJy2qXdQfl4WmGl9yERJ0tC-qdGH1' : 0
+              driveID === null || driveID.length === 0
+                ? '1AO2pJy2qXdQfl4WmGl9yERJ0tC-qdGH1'
+                : driveID
             }/preview`}
             width="100%"
             height="100%"

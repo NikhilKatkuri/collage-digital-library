@@ -34,7 +34,7 @@ const Page = () => {
   });
   const [Table, setTable] = React.useState<Table[] | null>(null);
 
-  const [regu,setRegu] = React.useState<RegulationType>('hr-22'); 
+  const [regu, setRegu] = React.useState<RegulationType>('hr-22');
   React.useEffect(() => {
     const brunchDataProcess = brunch.find(item => item.regulationType === regu);
 

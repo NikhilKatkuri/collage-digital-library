@@ -1,4 +1,5 @@
 'use client';
+import { useSearch } from '@/context/SearchContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -8,6 +9,7 @@ type NavLinkaTypes = {
   path: string;
 };
 const Navbar: React.FC = () => {
+  const { setIsSearching } = useSearch();
   const [isOpen, setIsOpen] = React.useState(false);
   const NavLinks: NavLinkaTypes[] = [
     {
@@ -62,6 +64,9 @@ const Navbar: React.FC = () => {
         </div>
         <div className="flex items-center gap-5">
           <button
+            onClick={() => {
+              setIsSearching(true);
+            }}
             type="button"
             className="bg-bg-secondary flex h-8 cursor-pointer items-center space-x-2 rounded-md px-2 font-medium max-md:hidden md:space-x-3"
           >
@@ -97,7 +102,12 @@ const Navbar: React.FC = () => {
           >
             Hitam
           </button>
-          <button className="cursor-pointer transition-all duration-200 ease-in-out active:scale-95 md:hidden">
+          <button
+            onClick={() => {
+              setIsSearching(true);
+            }}
+            className="cursor-pointer transition-all duration-200 ease-in-out active:scale-95 md:hidden"
+          >
             <span className="md:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
