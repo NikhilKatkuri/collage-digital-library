@@ -35,6 +35,7 @@ export type SemesterType =
 export type Semester = {
   semester: SemesterType;
   subjects: Subject[];
+  keyword?: string[];
 };
 
 export type YearType = 'YEAR-1' | 'YEAR-2' | 'YEAR-3' | 'YEAR-4';
@@ -1751,7 +1752,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-1',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'MAC',
                     resource: [
                       {
                         type: 'assignments',
@@ -1784,7 +1785,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'AP',
                     resource: [
                       {
                         type: 'assignments',
@@ -1817,7 +1818,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'BEEE',
                     resource: [
                       {
                         type: 'assignments',
@@ -1850,7 +1851,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'PPS ( C PROGRAMMING )',
                     resource: [
                       {
                         type: 'assignments',
@@ -1883,7 +1884,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'ESE',
                     resource: [
                       {
                         type: 'assignments',
@@ -1916,7 +1917,73 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'ESE-LAB',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'BEE-LAB',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'AP-LAB',
                     resource: [
                       {
                         type: 'assignments',
@@ -1954,7 +2021,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-2',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'ODEV',
                     resource: [
                       {
                         type: 'assignments',
@@ -1987,7 +2054,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'PP',
                     resource: [
                       {
                         type: 'assignments',
@@ -2020,7 +2087,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'DS IN C',
                     resource: [
                       {
                         type: 'assignments',
@@ -2053,7 +2120,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'CHEMISTRY',
                     resource: [
                       {
                         type: 'assignments',
@@ -2086,7 +2153,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'DT-LAB',
                     resource: [
                       {
                         type: 'assignments',
@@ -2119,7 +2186,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'EWS/ITWS',
                     resource: [
                       {
                         type: 'assignments',
@@ -2162,7 +2229,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-3',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'DISCRETE MATHEMATICS',
                     resource: [
                       {
                         type: 'assignments',
@@ -2195,7 +2262,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'OOP-JAVA',
                     resource: [
                       {
                         type: 'assignments',
@@ -2228,7 +2295,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'DBMS',
                     resource: [
                       {
                         type: 'assignments',
@@ -2261,7 +2328,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'COA',
                     resource: [
                       {
                         type: 'assignments',
@@ -2294,7 +2361,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'AECS',
                     resource: [
                       {
                         type: 'assignments',
@@ -2327,7 +2394,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'UHV',
                     resource: [
                       {
                         type: 'assignments',
@@ -2365,7 +2432,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-4',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'PAS',
                     resource: [
                       {
                         type: 'assignments',
@@ -2398,7 +2465,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'OS',
                     resource: [
                       {
                         type: 'assignments',
@@ -2431,7 +2498,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'FLAT',
                     resource: [
                       {
                         type: 'assignments',
@@ -2464,7 +2531,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'DAA',
                     resource: [
                       {
                         type: 'assignments',
@@ -2497,7 +2564,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'CN',
                     resource: [
                       {
                         type: 'assignments',
@@ -2530,7 +2597,40 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'CN-LAB',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'CONSTITUTION OF INDIA',
                     resource: [
                       {
                         type: 'assignments',
@@ -2573,7 +2673,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-5',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'FULL STACK',
                     resource: [
                       {
                         type: 'assignments',
@@ -2606,7 +2706,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'CD',
                     resource: [
                       {
                         type: 'assignments',
@@ -2639,7 +2739,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'OE-1',
                     resource: [
                       {
                         type: 'assignments',
@@ -2672,7 +2772,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'SWE',
                     resource: [
                       {
                         type: 'assignments',
@@ -2705,7 +2805,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'PE-1',
                     resource: [
                       {
                         type: 'assignments',
@@ -2738,7 +2838,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'Environmental Science',
                     resource: [
                       {
                         type: 'assignments',
@@ -2776,7 +2876,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-6',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'PE-2',
                     resource: [
                       {
                         type: 'assignments',
@@ -2809,7 +2909,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'PE-3',
                     resource: [
                       {
                         type: 'assignments',
@@ -2842,106 +2942,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
-                    resource: [
-                      {
-                        type: 'assignments',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 1',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 2',
-                        url: '',
-                      },
-                      {
-                        type: 'notes',
-                        url: '',
-                      },
-                      {
-                        type: 'semester regular',
-                        url: '',
-                      },
-                      {
-                        type: 'semester supply',
-                        url: '',
-                      },
-                      {
-                        type: 'syllabus',
-                        url: '',
-                      },
-                    ],
-                  },
-                  {
-                    name: 'SUBJECT-4',
-                    resource: [
-                      {
-                        type: 'assignments',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 1',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 2',
-                        url: '',
-                      },
-                      {
-                        type: 'notes',
-                        url: '',
-                      },
-                      {
-                        type: 'semester regular',
-                        url: '',
-                      },
-                      {
-                        type: 'semester supply',
-                        url: '',
-                      },
-                      {
-                        type: 'syllabus',
-                        url: '',
-                      },
-                    ],
-                  },
-                  {
-                    name: 'SUBJECT-5',
-                    resource: [
-                      {
-                        type: 'assignments',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 1',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 2',
-                        url: '',
-                      },
-                      {
-                        type: 'notes',
-                        url: '',
-                      },
-                      {
-                        type: 'semester regular',
-                        url: '',
-                      },
-                      {
-                        type: 'semester supply',
-                        url: '',
-                      },
-                      {
-                        type: 'syllabus',
-                        url: '',
-                      },
-                    ],
-                  },
-                  {
-                    name: 'SUBJECT-6',
+                    name: 'OE-2',
                     resource: [
                       {
                         type: 'assignments',
@@ -2984,7 +2985,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-7',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'CNS',
                     resource: [
                       {
                         type: 'assignments',
@@ -3017,7 +3018,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'CC',
                     resource: [
                       {
                         type: 'assignments',
@@ -3050,7 +3051,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'PE-4',
                     resource: [
                       {
                         type: 'assignments',
@@ -3083,7 +3084,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'BEF',
                     resource: [
                       {
                         type: 'assignments',
@@ -3116,7 +3117,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'EE',
                     resource: [
                       {
                         type: 'assignments',
@@ -3149,7 +3150,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'OE-3',
                     resource: [
                       {
                         type: 'assignments',
@@ -3187,7 +3188,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-8',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'HCI',
                     resource: [
                       {
                         type: 'assignments',
@@ -3220,7 +3221,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'PE-5',
                     resource: [
                       {
                         type: 'assignments',
@@ -3253,7 +3254,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'PE-6',
                     resource: [
                       {
                         type: 'assignments',
@@ -3286,73 +3287,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
-                    resource: [
-                      {
-                        type: 'assignments',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 1',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 2',
-                        url: '',
-                      },
-                      {
-                        type: 'notes',
-                        url: '',
-                      },
-                      {
-                        type: 'semester regular',
-                        url: '',
-                      },
-                      {
-                        type: 'semester supply',
-                        url: '',
-                      },
-                      {
-                        type: 'syllabus',
-                        url: '',
-                      },
-                    ],
-                  },
-                  {
-                    name: 'SUBJECT-5',
-                    resource: [
-                      {
-                        type: 'assignments',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 1',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 2',
-                        url: '',
-                      },
-                      {
-                        type: 'notes',
-                        url: '',
-                      },
-                      {
-                        type: 'semester regular',
-                        url: '',
-                      },
-                      {
-                        type: 'semester supply',
-                        url: '',
-                      },
-                      {
-                        type: 'syllabus',
-                        url: '',
-                      },
-                    ],
-                  },
-                  {
-                    name: 'SUBJECT-6',
+                    name: 'Research Methodology/Essence of Indian Traditional knowledge',
                     resource: [
                       {
                         type: 'assignments',
@@ -3400,7 +3335,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-1',
                 subjects: [
                   {
-                    name: 'MATHS-1',
+                    name: 'MAC',
                     resource: [
                       {
                         type: 'assignments',
@@ -3466,7 +3401,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'BEFA',
                     resource: [
                       {
                         type: 'assignments',
@@ -3499,7 +3434,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'DT-LAB',
                     resource: [
                       {
                         type: 'assignments',
@@ -3532,7 +3467,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'PPS ( C LANGUAGE )',
                     resource: [
                       {
                         type: 'assignments',
@@ -3565,7 +3500,40 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'Engineering/IT Workshop',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'CHEMISTRY LAB',
                     resource: [
                       {
                         type: 'assignments',
@@ -3603,7 +3571,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-2',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'ODEV',
                     resource: [
                       {
                         type: 'assignments',
@@ -3636,7 +3604,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'AP',
                     resource: [
                       {
                         type: 'assignments',
@@ -3669,7 +3637,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'BWD',
                     resource: [
                       {
                         type: 'assignments',
@@ -3702,7 +3670,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'FDHD',
                     resource: [
                       {
                         type: 'assignments',
@@ -3735,7 +3703,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'AP-LAB',
                     resource: [
                       {
                         type: 'assignments',
@@ -3768,7 +3736,73 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'ESE',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'ESE-LAB',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'DHD-LAB',
                     resource: [
                       {
                         type: 'assignments',
@@ -3811,7 +3845,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-3',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'DIS',
                     resource: [
                       {
                         type: 'assignments',
@@ -3844,7 +3878,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'DBMS',
                     resource: [
                       {
                         type: 'assignments',
@@ -3877,7 +3911,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'DS',
                     resource: [
                       {
                         type: 'assignments',
@@ -3910,7 +3944,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'OS',
                     resource: [
                       {
                         type: 'assignments',
@@ -3943,7 +3977,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'PYTHON',
                     resource: [
                       {
                         type: 'assignments',
@@ -3976,7 +4010,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'UHV',
                     resource: [
                       {
                         type: 'assignments',
@@ -4014,7 +4048,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-4',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'SMF',
                     resource: [
                       {
                         type: 'assignments',
@@ -4047,7 +4081,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'OOP-JAVA',
                     resource: [
                       {
                         type: 'assignments',
@@ -4080,7 +4114,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'INTRO DS',
                     resource: [
                       {
                         type: 'assignments',
@@ -4113,7 +4147,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'CN',
                     resource: [
                       {
                         type: 'assignments',
@@ -4146,7 +4180,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'SWE',
                     resource: [
                       {
                         type: 'assignments',
@@ -4179,7 +4213,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'CN-LAB',
                     resource: [
                       {
                         type: 'assignments',
@@ -4222,7 +4256,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-5',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'DMDA',
                     resource: [
                       {
                         type: 'assignments',
@@ -4255,7 +4289,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'FULL STACK DEV',
                     resource: [
                       {
                         type: 'assignments',
@@ -4288,7 +4322,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'CC',
                     resource: [
                       {
                         type: 'assignments',
@@ -4321,7 +4355,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'INTRO ML',
                     resource: [
                       {
                         type: 'assignments',
@@ -4354,7 +4388,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'DAA',
                     resource: [
                       {
                         type: 'assignments',
@@ -4387,7 +4421,40 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'AECS',
+                    resource: [
+                      {
+                        type: 'assignments',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 1',
+                        url: '',
+                      },
+                      {
+                        type: 'mid 2',
+                        url: '',
+                      },
+                      {
+                        type: 'notes',
+                        url: '',
+                      },
+                      {
+                        type: 'semester regular',
+                        url: '',
+                      },
+                      {
+                        type: 'semester supply',
+                        url: '',
+                      },
+                      {
+                        type: 'syllabus',
+                        url: '',
+                      },
+                    ],
+                  },
+                  {
+                    name: 'ES',
                     resource: [
                       {
                         type: 'assignments',
@@ -4425,7 +4492,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-6',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'PE-1',
                     resource: [
                       {
                         type: 'assignments',
@@ -4458,7 +4525,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'OE-1',
                     resource: [
                       {
                         type: 'assignments',
@@ -4491,106 +4558,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
-                    resource: [
-                      {
-                        type: 'assignments',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 1',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 2',
-                        url: '',
-                      },
-                      {
-                        type: 'notes',
-                        url: '',
-                      },
-                      {
-                        type: 'semester regular',
-                        url: '',
-                      },
-                      {
-                        type: 'semester supply',
-                        url: '',
-                      },
-                      {
-                        type: 'syllabus',
-                        url: '',
-                      },
-                    ],
-                  },
-                  {
-                    name: 'SUBJECT-4',
-                    resource: [
-                      {
-                        type: 'assignments',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 1',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 2',
-                        url: '',
-                      },
-                      {
-                        type: 'notes',
-                        url: '',
-                      },
-                      {
-                        type: 'semester regular',
-                        url: '',
-                      },
-                      {
-                        type: 'semester supply',
-                        url: '',
-                      },
-                      {
-                        type: 'syllabus',
-                        url: '',
-                      },
-                    ],
-                  },
-                  {
-                    name: 'SUBJECT-5',
-                    resource: [
-                      {
-                        type: 'assignments',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 1',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 2',
-                        url: '',
-                      },
-                      {
-                        type: 'notes',
-                        url: '',
-                      },
-                      {
-                        type: 'semester regular',
-                        url: '',
-                      },
-                      {
-                        type: 'semester supply',
-                        url: '',
-                      },
-                      {
-                        type: 'syllabus',
-                        url: '',
-                      },
-                    ],
-                  },
-                  {
-                    name: 'SUBJECT-6',
+                    name: 'PE-2',
                     resource: [
                       {
                         type: 'assignments',
@@ -4633,7 +4601,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-7',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'BIG DATA ANALYTICS',
                     resource: [
                       {
                         type: 'assignments',
@@ -4666,7 +4634,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'DATA VISUALIZATION',
                     resource: [
                       {
                         type: 'assignments',
@@ -4699,7 +4667,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'OE-2',
                     resource: [
                       {
                         type: 'assignments',
@@ -4732,7 +4700,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'PE-3',
                     resource: [
                       {
                         type: 'assignments',
@@ -4765,7 +4733,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
+                    name: 'OE-3',
                     resource: [
                       {
                         type: 'assignments',
@@ -4798,7 +4766,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-6',
+                    name: 'GENDER SENSITIZATION',
                     resource: [
                       {
                         type: 'assignments',
@@ -4836,7 +4804,7 @@ const brunch: RegulationData[] = [
                 semester: 'SEMESTER-8',
                 subjects: [
                   {
-                    name: 'SUBJECT-1',
+                    name: 'PE-4',
                     resource: [
                       {
                         type: 'assignments',
@@ -4869,7 +4837,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-2',
+                    name: 'PE-5',
                     resource: [
                       {
                         type: 'assignments',
@@ -4902,7 +4870,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-3',
+                    name: 'PE-6',
                     resource: [
                       {
                         type: 'assignments',
@@ -4935,7 +4903,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-4',
+                    name: 'OE-4',
                     resource: [
                       {
                         type: 'assignments',
@@ -4968,40 +4936,7 @@ const brunch: RegulationData[] = [
                     ],
                   },
                   {
-                    name: 'SUBJECT-5',
-                    resource: [
-                      {
-                        type: 'assignments',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 1',
-                        url: '',
-                      },
-                      {
-                        type: 'mid 2',
-                        url: '',
-                      },
-                      {
-                        type: 'notes',
-                        url: '',
-                      },
-                      {
-                        type: 'semester regular',
-                        url: '',
-                      },
-                      {
-                        type: 'semester supply',
-                        url: '',
-                      },
-                      {
-                        type: 'syllabus',
-                        url: '',
-                      },
-                    ],
-                  },
-                  {
-                    name: 'SUBJECT-6',
+                    name: 'Research Methodology/Essence of Indian Traditional knowledge',
                     resource: [
                       {
                         type: 'assignments',
