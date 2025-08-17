@@ -1,0 +1,32 @@
+# Robots.txt for HITAM Digital Library
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://collage-digital-library.vercel.app/sitemap.xml
+
+# Allow access to all content for educational purposes
+Allow: /notes
+Allow: /syllabus
+Allow: /Question-papers
+Allow: /Doc
+
+# Block any potential admin or sensitive areas (if they exist in future)
+Disallow: /admin
+Disallow: /api/private
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
