@@ -1780,7 +1780,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/1kOf6KaJUH1dUsJYw9I6ecFVhZpsefi84/view?usp=drive_link',
                       },
                     ],
                   },
@@ -1813,7 +1813,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/1W7L6JGkVc-FqZkG_syBHGXuL3gmqxeIo/view?usp=drive_link',
                       },
                     ],
                   },
@@ -1879,7 +1879,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/1inr6hOsw-_bMDqXfNNxyEbrgTzfBUV6N/view?usp=drive_link',
                       },
                     ],
                   },
@@ -1912,7 +1912,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/1xmmD1yrENU9o-sc_D3VCIyrb5NhSkM6i/view?usp=drive_link',
                       },
                     ],
                   },
@@ -1945,12 +1945,12 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/1TIxLRqoPv-lwRbL7zHg9UYLeEVvY_n11/view?usp=drive_link',
                       },
                     ],
                   },
                   {
-                    name: 'BEE-LAB',
+                    name: 'BEEE-LAB',
                     resource: [
                       {
                         type: 'assignments',
@@ -2011,7 +2011,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/1W7L6JGkVc-FqZkG_syBHGXuL3gmqxeIo/view?usp=drive_link',
                       },
                     ],
                   },
@@ -3363,7 +3363,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: '1kOf6KaJUH1dUsJYw9I6ecFVhZpsefi84',
                       },
                     ],
                   },
@@ -3396,7 +3396,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: '1Q-SBHMdRKrvuCGf9klaPmpETTpDd80Ut',
                       },
                     ],
                   },
@@ -3429,7 +3429,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: '1mOWeoPaiL1OHWqE5g7pY-wlJj7eAMEgi',
                       },
                     ],
                   },
@@ -3462,7 +3462,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: '14cEkhkIxwgzYZprq2Ej_avVrOEGbiPd9',
                       },
                     ],
                   },
@@ -3495,7 +3495,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: '1inr6hOsw-_bMDqXfNNxyEbrgTzfBUV6N',
                       },
                     ],
                   },
@@ -3528,7 +3528,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: '1jGs1s5Lg9fP7LEwkSy-4RlvtCajgXiNZ',
                       },
                     ],
                   },
@@ -3561,7 +3561,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: '1KjGGd61a8Qj_flDHy2wVyln10Ph4ZHV4',
                       },
                     ],
                   },
@@ -3599,7 +3599,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: '1k9LIUjHMBw6r8hVDLrfeG6Gx3oeJUHjX',
                       },
                     ],
                   },
@@ -3632,7 +3632,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/12ootcd49wb8Fq5cPjZgmcX5rrWsOeil_/view?usp=sharing',
                       },
                     ],
                   },
@@ -3665,7 +3665,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/1YuyauYtAAfCrXGX169u2jl55NNn9cszg/view?usp=drive_link',
                       },
                     ],
                   },
@@ -3698,7 +3698,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/14wltJjKCbozd_gNb4dqIzsBUuG-vIRCs/view?usp=drive_link',
                       },
                     ],
                   },
@@ -3731,7 +3731,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/1W7L6JGkVc-FqZkG_syBHGXuL3gmqxeIo/view?usp=drive_link',
                       },
                     ],
                   },
@@ -3797,7 +3797,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/1TIxLRqoPv-lwRbL7zHg9UYLeEVvY_n11/view?usp=drive_link',
                       },
                     ],
                   },
@@ -3830,7 +3830,7 @@ const brunch: RegulationData[] = [
                       },
                       {
                         type: 'syllabus',
-                        url: '',
+                        url: 'https://drive.google.com/file/d/1hJ-SqRTk5XJPaDk2nHAubnlxDUJLnyvb/view?usp=drive_link',
                       },
                     ],
                   },

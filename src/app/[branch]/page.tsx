@@ -8,6 +8,7 @@ import brunch, {
   years,
   YearType,
 } from '@/data/brunch';
+import { getDriveFileId } from '@/utils/getdriveId';
 import { notFound, useParams, useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
@@ -15,14 +16,14 @@ const BranchPage: React.FC = () => {
   // router
   const router = useRouter();
   // control bar
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(true);
   // params
   const params = useParams();
   const branchParam = params.branch?.toString().toLowerCase();
   const isBranch = branches.find(a => a.toLowerCase() === branchParam);
 
   // controls
-  const [subjects, setsubjects] = useState<string[]>([
+  const [subjects, setSubjects] = useState<string[]>([
     'SUBJECT-1',
     'SUBJECT-2',
     'SUBJECT-3',
@@ -35,7 +36,7 @@ const BranchPage: React.FC = () => {
     regulations[0]
   );
   const [year, setYear] = React.useState<YearType>(years[0]);
-  const [subject, setSubject] = React.useState<string>(subjects[0]);
+  const [selectedSubject, setSelectedSubject] = React.useState<string>(subjects[0]);
   const [semester, setSemester] = React.useState<string[]>([]);
   const [SelectedSemester, setSelectedSemester] =
     React.useState<string>('Semester-1');
@@ -49,31 +50,65 @@ const BranchPage: React.FC = () => {
         item => item.regulationType === regulation
       );
       if (_regulation === null || _regulation === undefined) return;
+      
       const _year = _regulation.regulation.find(
         item => item.branch.toLowerCase() === branchParam
       )?.block;
+
       if (_year === null || _year === undefined) return;
+      
       const _block = _year.find(
         item => item.year.toLowerCase() === year.toLowerCase()
       );
 
       if (_block === null || _block === undefined) return;
+      
       setSemester(_block.semesterBlock.map(item => item.semester));
+      
       const _semester = _block.semesterBlock.find(
         item => item.semester.toLowerCase() === SelectedSemester.toLowerCase()
       );
+
       if (_semester === null || _semester === undefined) return;
-      setsubjects(_semester.subjects.map(item => item.name));
-      const _resource = _semester.subjects.find(item => item.resource);
-      if (_resource === null || _resource === undefined) return;
-      const url = _resource.resource.find(
+      
+      console.log(_semester.subjects.map(item => item.name));
+      setSubjects(_semester.subjects.map(item => item.name));
+
+      // Find the specific subject that matches the selected subject
+      const _selectedSubject = _semester.subjects.find(
+        item => item.name === selectedSubject
+      );
+      
+      if (_selectedSubject === null || _selectedSubject === undefined) {
+        setDriveID(null);
+        return;
+      }
+      
+      console.log('Selected subject:', _selectedSubject);
+      
+      // Find the resource of the selected type within the selected subject
+      const url = _selectedSubject.resource.find(
         item => item.type.toLowerCase() === resource.toLowerCase()
-      )?.url;
-      if (!url) return;
-      setDriveID(url);
+      );
+      
+      if (!url) {
+        setDriveID(null);
+        return;
+      }
+      const driveID = getDriveFileId(url.url);
+      setDriveID(driveID);
+      console.log('Drive URL:', url.url);
     }
     Update();
-  }, [SelectedSemester, branchParam, regulation, resource, subject, year]);
+  }, [SelectedSemester, branchParam, regulation, resource, selectedSubject, year]);
+
+  // Update selected subject when subjects list changes
+  React.useEffect(() => {
+    if (subjects.length > 0 && !subjects.includes(selectedSubject)) {
+      setSelectedSubject(subjects[0]);
+    }
+  }, [subjects, selectedSubject]);
+
   if (!isBranch) return notFound();
   return (
     <div className="relative h-screen w-screen">
@@ -203,9 +238,9 @@ const BranchPage: React.FC = () => {
                 {subjects.map(item => (
                   <button
                     key={item}
-                    onClick={() => setSubject(item)}
+                    onClick={() => setSelectedSubject(item)}
                     className={`w-full px-4 py-3 ${
-                      subject === item
+                      selectedSubject === item
                         ? 'index-button-level-2'
                         : 'select-button'
                     } rounded-md text-left shadow transition`}
@@ -239,17 +274,28 @@ const BranchPage: React.FC = () => {
         <div
           className={`flex ${isOpen ? 'md:w-[calc(100%-24rem)]' : 'md:w-full'} bg-bg-tint h-full w-full self-end transition-all duration-300 ease-in-out`}
         >
-          <iframe
-            src={`https://drive.google.com/file/d/${
-              driveID === null || driveID.length === 0
-                ? '1AO2pJy2qXdQfl4WmGl9yERJ0tC-qdGH1'
-                : driveID
-            }/preview`}
-            width="100%"
-            height="100%"
-            sandbox="allow-scripts allow-same-origin"
-            allow="autoplay"
-          ></iframe>
+          {driveID ? (
+            <iframe
+              src={`https://drive.google.com/file/d/${driveID}/preview`}
+              width="100%"
+              height="100%"
+              sandbox="allow-scripts allow-same-origin"
+              allow="autoplay"
+              title={`${selectedSubject} - ${resource}`}
+            ></iframe>
+          ) : (
+            <div className="flex h-full w-full items-center justify-center">
+              <div className="text-center"> 
+                <h3 className="text-xl font-semibold mb-2">No Content Available</h3>
+                 <p className="text-gray-600">
+                  {selectedSubject && resource 
+                    ? `No ${resource} found for ${selectedSubject}`
+                    : 'Please select a subject and resource type to view content'
+                  }
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

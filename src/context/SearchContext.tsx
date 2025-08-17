@@ -1,6 +1,15 @@
 'use client';
 
 import {
+  BranchType,
+  RegulationData,
+  RegulationType,
+  ResourceType,
+  SemesterType,
+  SubjectName,
+  YearType,
+} from '@/data/brunch';
+import {
   createContext,
   useContext,
   useState,
@@ -9,74 +18,6 @@ import {
   useMemo,
   useCallback,
 } from 'react';
-
-// Define types (unchanged)
-export type ResourceType =
-  | 'syllabus'
-  | 'notes'
-  | 'semester regular'
-  | 'semester supply'
-  | 'mid 1'
-  | 'mid 2'
-  | 'assignments';
-
-export const resources: ResourceType[] = [
-  'syllabus',
-  'notes',
-  'semester regular',
-  'semester supply',
-  'mid 1',
-  'mid 2',
-  'assignments',
-];
-
-export type Resource = {
-  type: ResourceType;
-  url: string;
-};
-
-export type SubjectName = string;
-
-export type Subject = {
-  name: SubjectName;
-  resource: Resource[];
-};
-
-export type SemesterType =
-  | 'SEMESTER-1'
-  | 'SEMESTER-2'
-  | 'SEMESTER-3'
-  | 'SEMESTER-4'
-  | 'SEMESTER-5'
-  | 'SEMESTER-6'
-  | 'SEMESTER-7'
-  | 'SEMESTER-8';
-
-export type Semester = {
-  semester: SemesterType;
-  subjects: Subject[];
-};
-
-export type YearType = 'YEAR-1' | 'YEAR-2' | 'YEAR-3' | 'YEAR-4';
-
-export type Block = {
-  year: YearType;
-  semesterBlock: Semester[];
-};
-
-export type BranchType = 'CSE' | 'DS' | 'ME' | 'EEE' | 'ECE' | 'AI-ML';
-
-export type Regulation = {
-  branch: BranchType;
-  block: Block[];
-};
-
-export type RegulationType = 'hr-22' | 'hr-24';
-
-export type RegulationData = {
-  regulationType: RegulationType;
-  regulation: Regulation[];
-};
 
 export type SearchResult = {
   regulationType: RegulationType;
@@ -141,21 +82,22 @@ export const SearchProvider = ({
 
           semesterBlock.forEach(sem => {
             const { semester, subjects } = sem;
-            
+
             // Add base entry for regulation/branch/year/semester
             flattened.push({
               regulationType,
               branch,
               year,
               semester,
-              searchText: `${regulationType} ${branch} ${year} ${semester}`.toLowerCase()
+              searchText:
+                `${regulationType} ${branch} ${year} ${semester}`.toLowerCase(),
             });
 
             if (!Array.isArray(subjects)) return;
 
             subjects.forEach(subj => {
               const { name, resource } = subj;
-              
+
               // Add subject entry
               flattened.push({
                 regulationType,
@@ -163,7 +105,8 @@ export const SearchProvider = ({
                 year,
                 semester,
                 subjectName: name,
-                searchText: `${regulationType} ${branch} ${year} ${semester} ${name}`.toLowerCase()
+                searchText:
+                  `${regulationType} ${branch} ${year} ${semester} ${name}`.toLowerCase(),
               });
 
               if (Array.isArray(resource)) {
@@ -176,7 +119,8 @@ export const SearchProvider = ({
                     subjectName: name,
                     resourceType: res.type,
                     resourceUrl: res.url,
-                    searchText: `${regulationType} ${branch} ${year} ${semester} ${name} ${res.type}`.toLowerCase()
+                    searchText:
+                      `${regulationType} ${branch} ${year} ${semester} ${name} ${res.type}`.toLowerCase(),
                   });
                 });
               }
@@ -208,33 +152,36 @@ export const SearchProvider = ({
     };
   }, [isSearching]);
 
-  const performSearchInternal = useCallback((query: string) => {
-    if (!query.trim()) {
-      setSearchResults([]);
+  const performSearchInternal = useCallback(
+    (query: string) => {
+      if (!query.trim()) {
+        setSearchResults([]);
+        setIsLoading(false);
+        return;
+      }
+
+      setIsLoading(true);
+      const lowerQuery = query.toLowerCase();
+
+      // Use the pre-computed searchable data for faster searching
+      const results = searchableData
+        .filter(item => item.searchText.includes(lowerQuery))
+        .slice(0, 50) // Limit results to improve performance
+        .map(item => ({
+          regulationType: item.regulationType,
+          branch: item.branch,
+          year: item.year,
+          semester: item.semester,
+          subjectName: item.subjectName,
+          resourceType: item.resourceType,
+          resourceUrl: item.resourceUrl,
+        }));
+
+      setSearchResults(results);
       setIsLoading(false);
-      return;
-    }
-
-    setIsLoading(true);
-    const lowerQuery = query.toLowerCase();
-    
-    // Use the pre-computed searchable data for faster searching
-    const results = searchableData
-      .filter(item => item.searchText.includes(lowerQuery))
-      .slice(0, 50) // Limit results to improve performance
-      .map(item => ({
-        regulationType: item.regulationType,
-        branch: item.branch,
-        year: item.year,
-        semester: item.semester,
-        subjectName: item.subjectName,
-        resourceType: item.resourceType,
-        resourceUrl: item.resourceUrl,
-      }));
-
-    setSearchResults(results);
-    setIsLoading(false);
-  }, [searchableData, setIsLoading]);
+    },
+    [searchableData, setIsLoading]
+  );
 
   // Debounced search function
   const debouncedSearch = useCallback(
@@ -248,17 +195,20 @@ export const SearchProvider = ({
     [performSearchInternal]
   );
 
-  const performSearch = useCallback((query: string) => {
-    if (!query.trim()) {
-      setSearchResults([]);
-      setIsLoading(false);
-      return;
-    }
+  const performSearch = useCallback(
+    (query: string) => {
+      if (!query.trim()) {
+        setSearchResults([]);
+        setIsLoading(false);
+        return;
+      }
 
-    setIsLoading(true);
-    const cleanup = debouncedSearch(query);
-    return cleanup;
-  }, [debouncedSearch, setIsLoading]);
+      setIsLoading(true);
+      const cleanup = debouncedSearch(query);
+      return cleanup;
+    },
+    [debouncedSearch, setIsLoading]
+  );
 
   return (
     <SearchContext.Provider
@@ -337,7 +287,7 @@ export const SearchProvider = ({
                   <div className="p-8 text-center">
                     <div className="text-text-tertiary mb-2">
                       <svg
-                        className="animate-spin mx-auto h-8 w-8"
+                        className="mx-auto h-8 w-8 animate-spin"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -362,7 +312,7 @@ export const SearchProvider = ({
                     </div>
                   </div>
                 )}
-                
+
                 {!isLoading && searchResults.length > 0 && (
                   <div className="p-2">
                     <div className="text-text-tertiary mb-2 px-2 text-sm">
