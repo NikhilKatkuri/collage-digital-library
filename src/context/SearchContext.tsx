@@ -6,6 +6,8 @@ import {
   useState,
   ReactNode,
   useEffect,
+  useMemo,
+  useCallback,
 } from 'react';
 
 // Define types (unchanged)
@@ -92,7 +94,8 @@ interface SearchContextType {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   searchResults: SearchResult[];
-  performSearch: (query: string, data: RegulationData[]) => void;
+  performSearch: (query: string) => void;
+  isLoading: boolean;
 }
 
 const SearchContext = createContext<SearchContextType | undefined>(undefined);
@@ -107,7 +110,86 @@ export const SearchProvider = ({
   const [isSearching, setIsSearching] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  // Memoize the flattened search data for better performance
+  const searchableData = useMemo(() => {
+    const flattened: Array<{
+      regulationType: RegulationType;
+      branch: BranchType;
+      year: YearType;
+      semester: SemesterType;
+      subjectName?: string;
+      resourceType?: ResourceType;
+      resourceUrl?: string;
+      searchText: string;
+    }> = [];
+
+    if (!Array.isArray(data)) return flattened;
+
+    data.forEach(regData => {
+      const { regulationType, regulation } = regData;
+      if (!Array.isArray(regulation)) return;
+
+      regulation.forEach(reg => {
+        const { branch, block } = reg;
+        if (!Array.isArray(block)) return;
+
+        block.forEach(blk => {
+          const { year, semesterBlock } = blk;
+          if (!Array.isArray(semesterBlock)) return;
+
+          semesterBlock.forEach(sem => {
+            const { semester, subjects } = sem;
+            
+            // Add base entry for regulation/branch/year/semester
+            flattened.push({
+              regulationType,
+              branch,
+              year,
+              semester,
+              searchText: `${regulationType} ${branch} ${year} ${semester}`.toLowerCase()
+            });
+
+            if (!Array.isArray(subjects)) return;
+
+            subjects.forEach(subj => {
+              const { name, resource } = subj;
+              
+              // Add subject entry
+              flattened.push({
+                regulationType,
+                branch,
+                year,
+                semester,
+                subjectName: name,
+                searchText: `${regulationType} ${branch} ${year} ${semester} ${name}`.toLowerCase()
+              });
+
+              if (Array.isArray(resource)) {
+                resource.forEach(res => {
+                  flattened.push({
+                    regulationType,
+                    branch,
+                    year,
+                    semester,
+                    subjectName: name,
+                    resourceType: res.type,
+                    resourceUrl: res.url,
+                    searchText: `${regulationType} ${branch} ${year} ${semester} ${name} ${res.type}`.toLowerCase()
+                  });
+                });
+              }
+            });
+          });
+        });
+      });
+    });
+
+    return flattened;
+  }, [data]);
+
+  // Keyboard handling
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && isSearching) {
@@ -126,107 +208,57 @@ export const SearchProvider = ({
     };
   }, [isSearching]);
 
-  const performSearch = (query: string, regulationData: RegulationData[]) => {
+  const performSearchInternal = useCallback((query: string) => {
     if (!query.trim()) {
       setSearchResults([]);
+      setIsLoading(false);
       return;
     }
 
+    setIsLoading(true);
     const lowerQuery = query.toLowerCase();
-    const results: SearchResult[] = [];
-
-    if (!Array.isArray(regulationData)) {
-      console.error('regulationData is not an array:', regulationData);
-      setSearchResults([]);
-      return;
-    }
-
-    regulationData.forEach(regData => {
-      const { regulationType, regulation } = regData;
-      if (!Array.isArray(regulation)) {
-        console.warn(`No regulation array for ${regulationType}`);
-        return;
-      }
-      regulation.forEach(reg => {
-        const { branch, block } = reg;
-        if (!Array.isArray(block)) {
-          console.warn(`No block array for ${branch}`);
-          return;
-        }
-        block.forEach(blk => {
-          const { year, semesterBlock } = blk;
-          if (!Array.isArray(semesterBlock)) {
-            console.warn(`No semesterBlock array for ${year}`);
-            return;
-          }
-          semesterBlock.forEach(sem => {
-            const { semester, subjects } = sem;
-            if (
-              regulationType?.toLowerCase()?.includes(lowerQuery) ||
-              branch?.toLowerCase()?.includes(lowerQuery) ||
-              year?.toLowerCase()?.includes(lowerQuery) ||
-              semester?.toLowerCase()?.includes(lowerQuery)
-            ) {
-              results.push({ regulationType, branch, year, semester });
-            }
-            if (!Array.isArray(subjects)) {
-              console.warn(`No subjects array for ${semester}`);
-              return;
-            }
-            subjects.forEach(subj => {
-              const { name, resource } = subj;
-              if (name?.toLowerCase()?.includes(lowerQuery)) {
-                results.push({
-                  regulationType,
-                  branch,
-                  year,
-                  semester,
-                  subjectName: name,
-                });
-                if (Array.isArray(resource)) {
-                  const sortedResources = [...resource].sort((a, b) => {
-                    return (
-                      resources.indexOf(a.type) - resources.indexOf(b.type)
-                    );
-                  });
-                  sortedResources.forEach(res => {
-                    results.push({
-                      regulationType,
-                      branch,
-                      year,
-                      semester,
-                      subjectName: name,
-                      resourceType: res.type,
-                      resourceUrl: res.url,
-                    });
-                  });
-                }
-              }
-              if (Array.isArray(resource)) {
-                resource.forEach(res => {
-                  if (res.type?.toLowerCase()?.includes(lowerQuery)) {
-                    results.push({
-                      regulationType,
-                      branch,
-                      year,
-                      semester,
-                      subjectName: name,
-                      resourceType: res.type,
-                      resourceUrl: res.url,
-                    });
-                  }
-                });
-              } else {
-                console.warn(`No resource array for ${name}`);
-              }
-            });
-          });
-        });
-      });
-    });
+    
+    // Use the pre-computed searchable data for faster searching
+    const results = searchableData
+      .filter(item => item.searchText.includes(lowerQuery))
+      .slice(0, 50) // Limit results to improve performance
+      .map(item => ({
+        regulationType: item.regulationType,
+        branch: item.branch,
+        year: item.year,
+        semester: item.semester,
+        subjectName: item.subjectName,
+        resourceType: item.resourceType,
+        resourceUrl: item.resourceUrl,
+      }));
 
     setSearchResults(results);
-  };
+    setIsLoading(false);
+  }, [searchableData, setIsLoading]);
+
+  // Debounced search function
+  const debouncedSearch = useCallback(
+    (query: string) => {
+      const timeoutId = setTimeout(() => {
+        performSearchInternal(query);
+      }, 300); // 300ms delay
+
+      return () => clearTimeout(timeoutId);
+    },
+    [performSearchInternal]
+  );
+
+  const performSearch = useCallback((query: string) => {
+    if (!query.trim()) {
+      setSearchResults([]);
+      setIsLoading(false);
+      return;
+    }
+
+    setIsLoading(true);
+    const cleanup = debouncedSearch(query);
+    return cleanup;
+  }, [debouncedSearch, setIsLoading]);
 
   return (
     <SearchContext.Provider
@@ -237,6 +269,7 @@ export const SearchProvider = ({
         setSearchQuery,
         searchResults,
         performSearch,
+        isLoading,
       }}
     >
       <div className="">
@@ -272,7 +305,7 @@ export const SearchProvider = ({
                     value={searchQuery}
                     onChange={e => {
                       setSearchQuery(e.target.value);
-                      performSearch(e.target.value, data);
+                      performSearch(e.target.value);
                     }}
                     className="text-text-primary placeholder-text-tertiary flex-1 bg-transparent text-lg outline-none"
                     autoFocus
@@ -300,7 +333,37 @@ export const SearchProvider = ({
               </div>
 
               <div className="max-h-96 overflow-y-auto">
-                {searchResults.length > 0 && (
+                {isLoading && (
+                  <div className="p-8 text-center">
+                    <div className="text-text-tertiary mb-2">
+                      <svg
+                        className="animate-spin mx-auto h-8 w-8"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div className="text-text-secondary text-sm">
+                      Searching...
+                    </div>
+                  </div>
+                )}
+                
+                {!isLoading && searchResults.length > 0 && (
                   <div className="p-2">
                     <div className="text-text-tertiary mb-2 px-2 text-sm">
                       {searchResults.length} results found
@@ -350,7 +413,7 @@ export const SearchProvider = ({
                   </div>
                 )}
 
-                {searchQuery && searchResults.length === 0 && (
+                {!isLoading && searchQuery && searchResults.length === 0 && (
                   <div className="p-8 text-center">
                     <div className="text-text-quaternary mb-2">
                       <svg
@@ -377,7 +440,7 @@ export const SearchProvider = ({
                   </div>
                 )}
 
-                {!searchQuery && (
+                {!isLoading && !searchQuery && (
                   <div className="p-8 text-center">
                     <div className="text-text-quaternary mb-4">
                       <svg
