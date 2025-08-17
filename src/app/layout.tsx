@@ -103,73 +103,84 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="theme-color" content="#08090a" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
+        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/logo.svg" />
         <link rel="manifest" href="/manifest.json" />
-        
+        <meta
+          name="google-site-verification"
+          content="AJg7fapgldZaiOyT2GQeRdmZnll4K58FLpn_eiXy82E"
+        />
         {/* Structured Data for Educational Organization */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "EducationalOrganization",
-              "name": "HITAM Digital Library",
-              "alternateName": "Hyderabad Institute of Technology and Management Digital Library",
-              "url": "https://collage-digital-library.vercel.app",
-              "logo": "https://collage-digital-library.vercel.app/logo.svg",
-              "description": "Digital library providing access to syllabus, notes, assignments, and question papers for HITAM students",
-              "sameAs": [
-                "https://github.com/NikhilKatkuri/collage-digital-library"
+              '@context': 'https://schema.org',
+              '@type': 'EducationalOrganization',
+              name: 'HITAM Digital Library',
+              alternateName:
+                'Hyderabad Institute of Technology and Management Digital Library',
+              url: 'https://collage-digital-library.vercel.app',
+              logo: 'https://collage-digital-library.vercel.app/logo.svg',
+              description:
+                'Digital library providing access to syllabus, notes, assignments, and question papers for HITAM students',
+              sameAs: [
+                'https://github.com/NikhilKatkuri/collage-digital-library',
               ],
-              "serviceType": "Educational Resource Platform",
-              "areaServed": "India",
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Educational Resources",
-                "itemListElement": [
+              serviceType: 'Educational Resource Platform',
+              areaServed: 'India',
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Educational Resources',
+                itemListElement: [
                   {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Course",
-                      "name": "Engineering Course Materials",
-                      "description": "Syllabus, notes, and question papers for various engineering branches"
-                    }
-                  }
-                ]
-              }
-            })
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Course',
+                      name: 'Engineering Course Materials',
+                      description:
+                        'Syllabus, notes, and question papers for various engineering branches',
+                    },
+                  },
+                ],
+              },
+            }),
           }}
         />
-        
+
         {/* Website Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "HITAM Digital Library",
-              "url": "https://collage-digital-library.vercel.app",
-              "description": "Access HITAM Digital Library for syllabus copies, class notes, assignments, and previous semester/mid exam question papers",
-              "publisher": {
-                "@type": "Organization",
-                "name": "HITAM Digital Library",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://collage-digital-library.vercel.app/logo.svg"
-                }
-              },
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": {
-                  "@type": "EntryPoint",
-                  "urlTemplate": "https://collage-digital-library.vercel.app/?q={search_term_string}"
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'HITAM Digital Library',
+              url: 'https://collage-digital-library.vercel.app',
+              description:
+                'Access HITAM Digital Library for syllabus copies, class notes, assignments, and previous semester/mid exam question papers',
+              publisher: {
+                '@type': 'Organization',
+                name: 'HITAM Digital Library',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://collage-digital-library.vercel.app/logo.svg',
                 },
-                "query-input": "required name=search_term_string"
-              }
-            })
+              },
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate:
+                    'https://collage-digital-library.vercel.app/?q={search_term_string}',
+                },
+                'query-input': 'required name=search_term_string',
+              },
+            }),
           }}
         />
       </head>
