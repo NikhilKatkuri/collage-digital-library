@@ -70,11 +70,9 @@ const BranchPage: React.FC = () => {
       );
 
       if (_semester === null || _semester === undefined) return;
-      
-      console.log(_semester.subjects.map(item => item.name));
+       
       setSubjects(_semester.subjects.map(item => item.name));
-
-      // Find the specific subject that matches the selected subject
+ 
       const _selectedSubject = _semester.subjects.find(
         item => item.name === selectedSubject
       );
@@ -83,10 +81,7 @@ const BranchPage: React.FC = () => {
         setDriveID(null);
         return;
       }
-      
-      console.log('Selected subject:', _selectedSubject);
-      
-      // Find the resource of the selected type within the selected subject
+       
       const url = _selectedSubject.resource.find(
         item => item.type.toLowerCase() === resource.toLowerCase()
       );
@@ -102,7 +97,7 @@ const BranchPage: React.FC = () => {
     Update();
   }, [SelectedSemester, branchParam, regulation, resource, selectedSubject, year]);
 
-  // Update selected subject when subjects list changes
+ 
   React.useEffect(() => {
     if (subjects.length > 0 && !subjects.includes(selectedSubject)) {
       setSelectedSubject(subjects[0]);
